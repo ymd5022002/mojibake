@@ -2,33 +2,30 @@
 <head>
     <title>繝ｫ繝ゅ九､縺ｩKeybord</title>
     <script>
-        let text = "";
-        let i = 1;
-        let mojilarge = ['％','√','>','※','励','縲','繝','溘','九','縺','繧','翫'] /*0-11*/
-        let mojismall = ['ｫ','ｦ','ゅ','ゃ','ｩ','ｧ','ｯ','､','�']/*0-8*/
+        let text = "";  /*表示文字列*/
+        let i = 1;      /*偶奇フラグ*/
+        let largeChara = ['％','√','>','※','励','縲','繝','溘','九','縺','繧','翫','ゅ','ゃ']; /*全角文字*/
+        let smallChara = ['ｫ','ｦ','ｩ','ｧ','ｯ','､','�']; /*半角文字*/
         document.onkeydown = keydown;
+        /*
         document.getElementById("content1").addEventListener('touchstart', keydown);
-
+        スマホのタップでも入力したかったのですが、上手く行きませんでした
+        */
         function keydown() {
                 target = document.getElementById("content1");
-                if (i == 1){
-                    var n = Math.floor(Math.random() * 11) 
-                    text =  text + mojilarge[n];
-                }else{
-                    var n = Math.floor(Math.random() * 8) 
-                    text =  text + mojismall[n];                    
+                if (i == 1){    /*奇数文字目は全角文字からランダムに選ぶ*/
+                    var n = Math.floor(Math.random() * 13); /*0-13の整数乱数*/
+                    text =  text + largeChara[n];
+                }else{          /*偶数文字目は全角文字からランダムに選ぶ*/
+                    var n = Math.floor(Math.random() * 6);  /*0-6の整数乱数*/
+                    text =  text + smallChara[n];                    
                 };
-                target.innerHTML = text + "_";
-                i = (-1) * i
+                target.innerHTML = text + "_";      /*文字の描画*/
+                i = (-1) * i                        /*偶奇フラグを反転*/
             };
-            /*document.getElementById('text').innerHTML = "_"*/
     </script>
 </head>
 <body>
-    <!--
-    <p>励ｧ繧ｧ繧ｯ九ｧ繝ゅKeybord※ｯ％､九ｦ√ｫ>ｫ縲ｫ縺ｯ!!</p>
-    <hr>
-    -->
     <section id="content1">_</section>
     <p><span id="text"></span></p>
 </body>
