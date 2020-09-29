@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <title>繝ｫ繝ゅ九､縺ｩKeybord</title>
+    <script>
+        let text = "";
+        let i = 1;
+        let mojilarge = ['％','√','>','※','励','縲','繝','溘','九','縺','繧','翫'] /*0-11*/
+        let mojismall = ['ｫ','ｦ','ゅ','ゃ','ｩ','ｧ','ｯ','､','�']/*0-8*/
+        document.onkeydown = keydown;
+        document.getElementById("text").addEventListener('touchstart', keydown);
+
+        function keydown() {
+                target = document.getElementById("content1");
+                if (i == 1){
+                    var n = Math.floor(Math.random() * 11) 
+                    text =  text + mojilarge[n];
+                }else{
+                    var n = Math.floor(Math.random() * 8) 
+                    text =  text + mojismall[n];                    
+                };
+                target.innerHTML = text + "_";
+                i = (-1) * i
+            };
+            /*document.getElementById('text').innerHTML = "_"*/
+    </script>
+</head>
+<body>
+    <!--
+    <p>励ｧ繧ｧ繧ｯ九ｧ繝ゅKeybord※ｯ％､九ｦ√ｫ>ｫ縲ｫ縺ｯ!!</p>
+    <hr>
+    -->
+    <section id="content1"></section>
+    <p><span id="text"></span></p>
+</body>
