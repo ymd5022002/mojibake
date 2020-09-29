@@ -14,10 +14,10 @@
         function keydown() {
                 target = document.getElementById("content1");
                 if (i == 1){    /*奇数文字目は全角文字からランダムに選ぶ*/
-                    var n = Math.floor(Math.random() * 13); /*0-13の整数乱数*/
+                    var n = Math.floor(Math.random() * 14); /*0-13の整数乱数*/
                     text =  text + largeChara[n];
                 }else{          /*偶数文字目は全角文字からランダムに選ぶ*/
-                    var n = Math.floor(Math.random() * 6);  /*0-6の整数乱数*/
+                    var n = Math.floor(Math.random() * 7);  /*0-6の整数乱数*/
                     text =  text + smallChara[n];                    
                 };
                 target.innerHTML = text + "_";      /*文字の描画*/
